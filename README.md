@@ -1,4 +1,4 @@
-This repository provides the Python implementation of our work on cell segmentation in 3D microscopy images using a cascaded deep learning architecture proposed in the paper[1]. The cascaded architecture consists of two deep learning networks: an image regression network and a voxel-wise classification network. First, the image regression network estimates two Euclidean distance maps, including an enhanced cell-interior map and a border map. Next, the difference of these two maps is fed as input to the voxel-wise classification network, which outputs a semantic segmentation mask. Finally, an instance-wise mask is provided by utilizing the outputs of the two networks in a classical seeded watershed approach.
+This repository provides the Python implementation of our work on cell segmentation in 3D microscopy images using a cascaded deep learning architecture proposed in the paper [1]. The cascaded architecture consists of two deep learning networks: an image regression network and a voxel-wise classification network. First, the image regression network estimates two Euclidean distance maps, including an enhanced cell-interior map and a border map. Next, the difference of these two maps is fed as input to the voxel-wise classification network, which outputs a semantic segmentation mask. Finally, an instance-wise mask is provided by utilizing the outputs of the two networks in a classical seeded watershed approach.
 
 # Installation
 ## Install environment for 'distance map estimation network':
@@ -33,14 +33,14 @@ step 1: First generate input (difference distance map) and ground-truth(three-cl
 step 2: Run the training script 'Train_network_semantic_segmentation.py'. The model will be saved in the folder 'Trained_model_semantic_seg' as 'best_metric_model_dicefocal.pth'
 
 # Testing
-We have provided a test image of a synthetic bacterial biofilm (3D image) and pre-trained models for the two networks. Download pre-trained models from here and extract in the current directory. <br />
+We have provided a test image of a synthetic bacterial biofilm (3D image) and pre-trained models for the two networks. Download pre-trained models from <a href="https://drive.google.com/file/d/1wtRa5erN-YQUH-Qr_dyUF1KI0AJcSyQZ/view?usp=drive_link" target="_blank">here</a> and extract in the current directory. <br />
 (1) activate env: conda activate map_est <br />
     run the script 'evaluate_distance_map_estimation.py'. If using newly trained model, change the 'path_model' variable in the script. Otherwise, pre-trained model will be used. <br />
 (2) activate env: conda activate final_seg. <br />
     run the script 'evaluate_semantic_segmentation.py'. If using newly trained model, change the 'path_model' variable in the script. Otherwise, pre-trained model will be used.
 
 # Citations:
-Toma, T. T., Wang, Y., Gahlmann, A., & Acton, S. T. (2023, October). DeepSeeded: Volumetric segmentation of dense cell populations with a cascade of deep neural networks in bacterial biofilm
+[1] Toma, T. T., Wang, Y., Gahlmann, A., & Acton, S. T. (2023, October). DeepSeeded: Volumetric segmentation of dense cell populations with a cascade of deep neural networks in bacterial biofilm
 applications. Expert Systems with Applications, 122094.
     
 
