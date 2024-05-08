@@ -3,15 +3,15 @@ This repository provides the Python implementation of our work on cell segmentat
 # Installation
 ## Install environment for the regression network:
 mamba create -n map_est python=3.8 <br />
-conda activate map_est
-mamba install pytorch==1.13.0 torchvision==0.14.0 torchaudio==0.13.0 pytorch-cuda=11.7 -c pytorch -c nvidia
-mamba install -c conda-forge openh264
-mamba install conda-forge::python-graphviz
+conda activate map_est <br />
+mamba install pytorch==1.13.0 torchvision==0.14.0 torchaudio==0.13.0 pytorch-cuda=11.7 -c pytorch -c nvidia <br />
+mamba install -c conda-forge openh264 <br />
+mamba install conda-forge::python-graphviz <br />
 pip install -r requirements.txt
 
 ## Install environment for the voxel-wise classification network:
-conda create --name final_seg python=3.8
-conda activate final_seg
-cd MONAI-0.5.2
-pip install -e ".[all]"
+conda create --name final_seg python=3.8 <br />
+conda activate final_seg <br />
+cd MONAI-0.5.2 <br />
+pip install -e ".[all]" <br />
 
