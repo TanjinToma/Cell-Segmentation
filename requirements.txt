@@ -1,0 +1,27 @@
+# requirements.txt
+numpy
+matplotlib
+cvxopt
+cython
+graphviz
+imgaug
+ipython
+mahotas
+pandas
+pillow
+pydot
+pytest
+qimage2ndarray
+scikit-image
+scipy
+shapely
+sympy
+tensorboardx
+imageio
+tikzplotlib
+seaborn
+tifffile
+slidingwindow
+torchsummary
+hiddenlayer
+imagecodecs

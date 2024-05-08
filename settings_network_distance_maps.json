@@ -1,0 +1,24 @@
+{
+  "architecture": [
+    "DU",
+    "conv",
+    "relu",
+    "bn",
+    [
+      32,
+      512
+    ]
+  ],
+  "batch_size": 4,
+  "break_condition": 28,
+  "label_type": "distance",
+  "learning_rate": 0.0008,
+  "lr_patience": 12,
+  "loss": "smooth_l1",
+  "max_epochs": 150,
+  "num_gpus": 1,
+  "run_name": "distance_model_01",
+  "data_transforms": "{'train': Compose(\n    <segmentation.training.mytransforms_3D_Tanjin.Contrast object at 0x7f88c811b160>\n    <segmentation.training.mytransforms_3D_Tanjin.Blur object at 0x7f88c811b0d0>\n    <segmentation.training.mytransforms_3D_Tanjin.ToTensor object at 0x7f88c811b100>\n), 'val': <segmentation.training.mytransforms_3D_Tanjin.ToTensor object at 0x7f88c811b280>}",
+  "training_time": 22682.023489952087,
+  "trained_epochs": 125
+}
