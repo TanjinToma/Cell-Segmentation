@@ -40,8 +40,8 @@ We have provided a test image of a synthetic bacterial biofilm (3D image) and pr
     run the script 'evaluate_semantic_segmentation.py'. If using newly trained model, change the 'path_model' variable in the script. Otherwise, pre-trained model will be used.
 
 # Citations:
-[1] Toma, T. T., Wang, Y., Gahlmann, A., & Acton, S. T. (2023, October). DeepSeeded: Volumetric segmentation of dense cell populations with a cascade of deep neural networks in bacterial biofilm
-applications. Expert Systems with Applications, 122094.
+[1] <a href="https://www.sciencedirect.com/science/article/abs/pii/S0957417423025964" target="_blank">Toma, T. T., Wang, Y., Gahlmann, A., & Acton, S. T. (2023, October). DeepSeeded: Volumetric segmentation of dense cell populations with a cascade of deep neural networks in bacterial biofilm
+applications. Expert Systems with Applications, 122094.</a>
     
 
 
