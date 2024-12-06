@@ -33,7 +33,7 @@ step 1: First generate input (difference distance map) and ground-truth(three-cl
 step 2: Run the training script 'Train_network_semantic_segmentation.py'. The model will be saved in the folder 'Trained_model_semantic_seg' as 'best_metric_model_dicefocal.pth'
 
 # Testing
-We have provided a test image of a synthetic bacterial biofilm (3D image) and pre-trained models for the two networks. Download pre-trained models from <a href="https://drive.google.com/file/d/1wtRa5erN-YQUH-Qr_dyUF1KI0AJcSyQZ/view?usp=drive_link" target="_blank">here</a> and extract in the current directory. <br />
+We have provided a test image of a synthetic bacterial biofilm (3D image) and pre-trained models for the two networks. Download pre-trained models from <a href="https://drive.google.com/file/d/1vMreJ3b3GYIKjEA5xucIr6T91DCQRGC2/view?usp=drive_link" target="_blank">here</a> and extract in the current directory. <br />
 (1) activate env: conda activate map_est <br />
     run the script 'evaluate_distance_map_estimation.py'. If using newly trained model, change the 'path_model' variable in the script. Otherwise, pre-trained model will be used. <br />
 (2) activate env: conda activate final_seg. <br />
