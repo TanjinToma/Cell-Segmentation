@@ -6,34 +6,56 @@ This repository provides the Python implementation of our work on **3D cell segm
 
 ## Installation
 ### Install environment for 'distance map estimation network':
-mamba create -n map_est python=3.8 <br />
-conda activate map_est <br />
-mamba install pytorch==1.13.0 torchvision==0.14.0 torchaudio==0.13.0 pytorch-cuda=11.7 -c pytorch -c nvidia <br />
-mamba install -c conda-forge openh264 <br />
-mamba install conda-forge::python-graphviz <br />
+```bash
+mamba create -n map_est python=3.8
+conda activate map_est
+mamba install pytorch==1.13.0 torchvision==0.14.0 torchaudio==0.13.0 pytorch-cuda=11.7 -c pytorch -c nvidia
+mamba install -c conda-forge openh264
+mamba install conda-forge::python-graphviz
 pip install -r requirements.txt
+```
 ### Install environment for 'voxel-wise classification network':
-conda create --name final_seg python=3.8 <br />
-conda activate final_seg <br />
-cd MONAI-0.5.2 <br />
-pip install -e ".[all]" <br />
+```bash
+conda create --name final_seg python=3.8
+conda activate final_seg
+cd MONAI-0.5.2
+pip install -e ".[all]"
+```
 ---
 
 ## Training
-To train network for segmentation task, input-label pairs are needs. <br />
-input: intensity image (uint8 datatype) <br />
-label: instance image (uint16 datatype) <br />
-input train data needs to placed under the directory: './train_data/01' <br />
-label train data needs to placed under the directory: './train_data/01_ST/SEG' <br />
+To train the network for the segmentation task, input–label pairs are needed.
+
+- **Input:** intensity image (`uint8`)
+- **Label:** instance image (`uint16`)
+
+Training data should be organized as:
+./train_data/01 → input images
+./train_data/01_ST/SEG → label images
 
 ### Train distance map estimation network
-activate env: conda activate map_est <br />
-step 1: First generate input and ground-truth(distance maps) pairs using the script 'prepare_groundtruth_network_distance_maps.py' <br />
-step 2: Run the training script 'Train_network_distance_maps.py'. The model will be saved in the folder 'Trained_model_distance_maps' as 'distance_model_01.pth'
+```bash
+# Activate environment
+conda activate map_est
+# Step 1: Generate input–ground-truth (distance maps) pairs
+python prepare_groundtruth_network_distance_maps.py
+# Step 2: Train the distance map estimation network
+python Train_network_distance_maps.py
+# The trained model will be saved in:
+# ./Trained_model_distance_maps/distance_model_01.pth
+```
+
 ### Train semantic segmentation network
-activate env: conda activate final_seg <br />
-step 1: First generate input (difference distance map) and ground-truth(three-class voxl-wise mask) pairs using the script 'prepare_groundtruth_semantic_seg_network.py' <br />
-step 2: Run the training script 'Train_network_semantic_segmentation.py'. The model will be saved in the folder 'Trained_model_semantic_seg' as 'best_metric_model_dicefocal.pth'
+```bash
+# Activate environment
+conda activate final_seg
+# Step 1: Generate input (difference distance map) and ground-truth (3-class voxel-wise mask)
+python prepare_groundtruth_semantic_seg_network.py
+# Step 2: Train the semantic segmentation network
+python Train_network_semantic_segmentation.py
+# The trained model will be saved in:
+# ./Trained_model_semantic_seg/best_metric_model_dicefocal.pth
+```
 ---
 
 ## Testing
