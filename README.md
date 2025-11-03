@@ -59,11 +59,33 @@ python Train_network_semantic_segmentation.py
 ---
 
 ## Testing
-We have provided a test image of a synthetic bacterial biofilm (3D image) and pre-trained models for the two networks. Download pre-trained models from <a href="https://drive.google.com/file/d/1vMreJ3b3GYIKjEA5xucIr6T91DCQRGC2/view?usp=drive_link" target="_blank">here</a> and extract in the current directory. <br />
-(1) activate env: conda activate map_est <br />
-    run the script 'evaluate_distance_map_estimation.py'. If using newly trained model, change the 'path_model' variable in the script. Otherwise, pre-trained model will be used. <br />
-(2) activate env: conda activate final_seg. <br />
-    run the script 'evaluate_semantic_segmentation.py'. If using newly trained model, change the 'path_model' variable in the script. Otherwise, pre-trained model will be used.
+A test image of a synthetic bacterial biofilm (3D image) and **pre-trained models** for both networks are provided.  
+Download the pre-trained models from [**here**](https://drive.google.com/file/d/1vMreJ3b3GYIKjEA5xucIr6T91DCQRGC2/view?usp=drive_link) and extract them into the current working directory.
+
+### 1. Evaluate the distance map estimation network
+```bash
+# Activate environment
+conda activate map_est
+
+# Run the evaluation script
+python evaluate_distance_map_estimation.py
+
+# Note:
+# - If using a newly trained model, update the 'path_model' variable in the script.
+# - Otherwise, the provided pre-trained model will be used by default.
+```
+### 2. Evaluate the semantic segmentation network
+```bash
+# Activate environment
+conda activate final_seg
+
+# Run the evaluation script
+python evaluate_semantic_segmentation.py
+
+# Note:
+# - If using a newly trained model, update the 'path_model' variable in the script.
+# - Otherwise, the provided pre-trained model will be used by default.
+```
 
 ## Citation:
 [1] <a href="https://www.sciencedirect.com/science/article/abs/pii/S0957417423025964" target="_blank">Toma, T. T., Wang, Y., Gahlmann, A., & Acton, S. T. (2023, October). DeepSeeded: Volumetric segmentation of dense cell populations with a cascade of deep neural networks in bacterial biofilm
