@@ -62,7 +62,7 @@ python Train_network_semantic_segmentation.py
 A test image of a synthetic bacterial biofilm (3D image) and **pre-trained models** for both networks are provided.  
 Download the pre-trained models from [**here**](https://drive.google.com/file/d/1vMreJ3b3GYIKjEA5xucIr6T91DCQRGC2/view?usp=drive_link) and extract them into the current working directory.
 
-### 1. Evaluate the distance map estimation network
+### Evaluate the distance map estimation network
 ```bash
 # Activate environment
 conda activate map_est
@@ -74,7 +74,7 @@ python evaluate_distance_map_estimation.py
 # - If using a newly trained model, update the 'path_model' variable in the script.
 # - Otherwise, the provided pre-trained model will be used by default.
 ```
-### 2. Evaluate the semantic segmentation network
+### Evaluate the semantic segmentation network
 ```bash
 # Activate environment
 conda activate final_seg
