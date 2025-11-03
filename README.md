@@ -1,5 +1,5 @@
 # Accurate Cell Segmentation in Microscopy Imaging
-This repository provides the Python implementation of our work on **3D cell segmentation** in microscopy images. We propose a cascaded deep learning architecture [1] consisting of two deep learning networks: an **image regression network** and a **voxel-wise classification network**. First, the double-decoder U-Net-based image regression network estimates two **Euclidean distance maps**, including an enhanced cell-interior map and a border map. Next, the difference of these two maps is fed as input to another U-Net-based voxel-wise classification network, which outputs a **semantic segmentation mask**. Finally, an instance-wise mask is provided by utilizing the outputs of the two networks in a classical **seeded watershed** approach.
+This repository provides the Python implementation of our work on **3D cell segmentation** in microscopy images. We propose a cascaded deep learning architecture [1] consisting of two deep learning networks: an **image regression network** and a **voxel-wise classification network**. First, the double-decoder U-Net-based image regression network estimates two **Euclidean distance maps**, including an enhanced cell-interior map and a border-enhanced map. Next, the difference of these two maps is fed as input to another U-Net-based voxel-wise classification network, which outputs a **semantic segmentation mask**. Finally, an instance-wise mask is provided by utilizing the outputs of the two networks in a classical **seeded watershed** approach.
 
 ![cell-segmentation](cell_segmentation_overview_diagram.png)
 ---
@@ -12,7 +12,7 @@ mamba install pytorch==1.13.0 torchvision==0.14.0 torchaudio==0.13.0 pytorch-cud
 mamba install -c conda-forge openh264 <br />
 mamba install conda-forge::python-graphviz <br />
 pip install -r requirements.txt
-
+---
 ### Install environment for 'voxel-wise classification network':
 conda create --name final_seg python=3.8 <br />
 conda activate final_seg <br />
@@ -31,7 +31,7 @@ label train data needs to placed under the directory: './train_data/01_ST/SEG' <
 activate env: conda activate map_est <br />
 step 1: First generate input and ground-truth(distance maps) pairs using the script 'prepare_groundtruth_network_distance_maps.py' <br />
 step 2: Run the training script 'Train_network_distance_maps.py'. The model will be saved in the folder 'Trained_model_distance_maps' as 'distance_model_01.pth'
-
+---
 ### Train semantic segmentation network
 activate env: conda activate final_seg <br />
 step 1: First generate input (difference distance map) and ground-truth(three-class voxl-wise mask) pairs using the script 'prepare_groundtruth_semantic_seg_network.py' <br />
