@@ -12,7 +12,6 @@ mamba install pytorch==1.13.0 torchvision==0.14.0 torchaudio==0.13.0 pytorch-cud
 mamba install -c conda-forge openh264 <br />
 mamba install conda-forge::python-graphviz <br />
 pip install -r requirements.txt
----
 ### Install environment for 'voxel-wise classification network':
 conda create --name final_seg python=3.8 <br />
 conda activate final_seg <br />
@@ -31,7 +30,6 @@ label train data needs to placed under the directory: './train_data/01_ST/SEG' <
 activate env: conda activate map_est <br />
 step 1: First generate input and ground-truth(distance maps) pairs using the script 'prepare_groundtruth_network_distance_maps.py' <br />
 step 2: Run the training script 'Train_network_distance_maps.py'. The model will be saved in the folder 'Trained_model_distance_maps' as 'distance_model_01.pth'
----
 ### Train semantic segmentation network
 activate env: conda activate final_seg <br />
 step 1: First generate input (difference distance map) and ground-truth(three-class voxl-wise mask) pairs using the script 'prepare_groundtruth_semantic_seg_network.py' <br />
